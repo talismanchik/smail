@@ -1,0 +1,23 @@
+.header {
+  background-color: #fdfdfe;
+  height: 49px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+.logoContainer{
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 30px;
+  }
+
+  .nameLogo {
+    font-family: Geologica, sans-serif;
+    margin: 0;
+    font-weight: 600;
+  }
+}
+
+}
