@@ -1,0 +1,103 @@
+@import "../../../Common/Styles/colors.module";
+
+.profileHeader {
+
+  .ownerPageCover {
+    height: 252px;
+    width: 911px;
+    //background-color: #8e969a;
+    background: linear-gradient(45deg, rgba(39, 54, 61, 0.32), #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 0 1px rgba(39, 54, 61, 0.32);
+  }
+
+  .profileMain {
+    position: relative;
+    height: 61px;
+    width: 871px;
+    background-color: $bgColor;
+    border-radius: 12px;
+    margin-top: -25px;
+    padding: 20px;
+    box-shadow: 0 0 1px rgba(39, 54, 61, 0.62);
+    display: flex;
+    align-items: end;
+
+    .profileMainAvaWrapper {
+      width: 150px;
+      height: 150px;
+
+      .profileMainAva {
+        display: block;
+        border: 5px solid $bgColor;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .profileMainWrapper {
+      width: 100%;
+
+      .profileMainWrapper_In {
+        margin-left: 16px;
+        margin-bottom: 4px;
+        display: flex;
+
+        .profileMainInfo {
+          display: flex;
+          flex-direction: column;
+
+          .profileOwnerName {
+
+            h2 {
+              margin: 0;
+            }
+          }
+
+          .profileOwnerInfo {
+            margin-top: 6px;
+            display: flex;
+            justify-content: space-evenly;
+            color: $color_text_subhead;
+            font-size: 14px;
+          }
+        }
+
+        .profileMainActionsWrapper {
+          margin-left: auto;
+
+          .profileMainActions {
+
+            display: flex;
+
+            .profileActionsButton {
+              background-color: $button_bg_color;
+              border-radius: 12px;
+              padding: 6px 0;
+              margin-left: 5px;
+              color: $button_text_color;
+              font-weight: 500;
+              font-size: 14px;
+
+              a {
+
+                span {
+                  padding: 0 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

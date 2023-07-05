@@ -1,5 +1,7 @@
+@import "../../Common/Styles/colors.module";
+
 .header {
-  background-color: #fdfdfe;
+  background-color: $bgColor;
   height: 49px;
   width: 100%;
   display: flex;
