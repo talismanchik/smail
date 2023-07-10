@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './WallModule.module.scss'
+import {Post} from "./Post/Post";
 
 export const WallModule = () => {
     return (
@@ -18,7 +19,23 @@ export const WallModule = () => {
                 </div>
             </div>
             <div className={style.wallModulePosts}>
-                There are no posts on the wall yet
+                <Post lastPost={true}
+                      name={'Eugene Nesterenko'}
+                      text={'This is last post'}
+                      likes={0}
+                      comments={0}
+                      time={'yesterday at 17:26'}
+                />
+                <Post lastPost={false}
+                      name={'Eugene Nesterenko'}
+                      text={'Hello World!'}
+                      likes={15}
+                      comments={1}
+                      time={'yesterday at 16:22'}
+                />
+                {/*<div className={style.wallEmpty}>*/}
+                {/*    There are no posts on the wall yet*/}
+                {/*</div>*/}
             </div>
         </div>
     );

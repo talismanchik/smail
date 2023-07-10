@@ -1,0 +1,31 @@
+.nav {
+  margin-top: 16px;
+  padding-left: 15px;
+  margin-left: 37px;
+  grid-area: n;
+  //background-color: gray;
+  //border: 1px solid gray;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+
+  .LeftMenuItem {
+    height: 30px;
+
+    //justify-content: center;
+    //border: 1px solid gainsboro;
+
+
+
+    .LeftMenuItem_Label {
+      display: flex;
+      align-items: center;
+      width: auto;
+
+      .LeftMenuItem_Icon {
+        margin-right: 10px;
+        color: #447bb9;
+      }
+    }
+  }
+}

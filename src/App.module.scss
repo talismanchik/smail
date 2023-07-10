@@ -1,7 +1,10 @@
+@import "./Common/Styles/colors.module";
+
 .appWrapper {
   display: grid;
-  background-color: #ecedef;
+  background-color: $bgColorWindow;
   height: 100vh;
+  padding-bottom: 20px;
 
   grid-template-rows: 49px 1fr;
   grid-template-columns: 2fr 10fr;
@@ -15,34 +18,7 @@
   grid-area: h;
 }
 
-.nav {
-  margin-top: 16px;
-  padding-left: 15px;
-  margin-left: 37px;
-  grid-area: n;
-  //background-color: gray;
-  //border: 1px solid gray;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
 
-  .LeftMenuItem {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    //justify-content: center;
-    //border: 1px solid gainsboro;
-
-    .LeftMenuItem_Icon {
-      margin-right: 10px;
-      color: #447bb9;
-    }
-
-    .LeftMenuItem_Label {
-      width: auto;
-    }
-  }
-}
 
 .content {
   grid-area: c;

@@ -1,0 +1,94 @@
+@import "../../../../../../../Common/Styles/colors.module";
+
+.postContainer {
+  margin-top: 16px;
+  background-color: $bgColor;
+  border-radius: 12px;
+  box-shadow: 0 0 1px $block_shadow;
+
+  .postHeader {
+    display: flex;
+    padding: 16px 20px 0 20px;
+
+    .postAvatar {
+      display: block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .postHeaderInfo {
+      display: flex;
+      flex-direction: column;
+
+      .postHeaderTitle {
+        color: $color_text_name;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      .postHeaderSubtitle {
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 2px;
+      }
+    }
+
+    .postHeaderActions {
+      margin-left: auto;
+    }
+  }
+
+  .postContent {
+    padding: 0 20px;
+
+    .postText {
+      color: black;
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 8px;
+    }
+
+    .postLikeWall {
+      padding: 12px 0;
+      display: flex;
+
+      .postLikeArea {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 24px;
+        width: 24px;
+        padding: 4px 12px;
+        background-color: $button_bg_color;
+        border-radius: 16px;
+        margin-right: 8px;
+
+        span{
+          font-weight: 500;
+          font-size: 13px;
+          margin-left: 4px;
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    .postComments {
+
+    }
+  }
+}
+.lastPost{
+  margin-top: 0;
+  border-radius: 0 0 12px 12px;
+}
