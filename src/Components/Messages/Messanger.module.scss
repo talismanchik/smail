@@ -1,0 +1,122 @@
+@import "../../Common/Styles/colors.module";
+
+.messengerContainer {
+
+  background-color: $bgColor;
+  border-radius: 12px;
+  box-shadow: 0 0 1px $block_shadow;
+  width: 911px;
+  display: flex;
+
+
+  .dialogs {
+    width: 316px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $border_wall_module;
+
+    .searcher {
+      display: flex;
+      height: 48px;
+      width: 100%;
+      justify-content: left;
+      align-items: center;
+      border-bottom: 1px solid $border_wall_module;
+
+      .searchIcon {
+        margin: 0 5px 0 15px;
+        color: $button_secondary_common;
+
+      }
+
+      input {
+        outline: none;
+        border: none;
+      }
+
+      ::-webkit-input-placeholder {
+        color: $color_text_subhead;
+        font-weight: 400;
+      }
+    }
+
+    .chatList {
+      box-sizing: content-box;
+
+      .Companion_Container {
+        height: 63px;
+        padding-left: 15px;
+
+
+        .navLink {
+          display: flex;
+          text-decoration: none;
+          color: black;
+
+          .avatar {
+            display: block;
+            height: 46px;
+            width: 46px;
+            padding: 9px 7px 7px 0;
+            //border-radius: 50%;
+            overflow: hidden;
+            //border: 1px solid black;
+            min-width: 46px;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+
+          .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 6px;
+            padding: 8px 15px 8px 0;
+            border-bottom: 1px solid $border_wall_module;
+
+
+            .topRow {
+              display: flex;
+              justify-content: space-between;
+              margin: 3px 0 7px;
+
+              .name {
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              .date {
+                font-size: 12px;
+                color: $button_secondary_common;
+              }
+            }
+
+            .lowRow {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .history_Container {
+
+      .chatHeader {
+
+      }
+
+      .chatBody {
+
+      }
+
+      .chatInput {
+
+      }
+    }
+  }
+}

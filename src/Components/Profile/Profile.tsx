@@ -7,7 +7,6 @@ import {ProfileSplitLayout} from "./ProfileSpliteLayout/ProfileSplitLayout";
 export const Profile = () => {
     return (
         <div className={style.profileContainer}>
-            <div className={style.airHidden}></div>
             <ProfileHeader/>
             <div className={style.airHidden}></div>
             <ProfileSplitLayout/>

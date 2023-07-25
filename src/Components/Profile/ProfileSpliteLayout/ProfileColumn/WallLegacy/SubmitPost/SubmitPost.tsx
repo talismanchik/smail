@@ -5,14 +5,19 @@ import style from './SubmitPost.module.scss'
 export const SubmitPost = () => {
     return (
         <div className={style.submitPostContainer}>
-            <div className={style.submitPostAva}>
-                <a>
-                    <img alt={'avatar'}
-                    src={ava}/>
-                </a>
+            <div className={style.inputLine}>
+                <div className={style.submitPostAva}>
+                    <a>
+                        <img alt={'avatar'}
+                             src={ava}/>
+                    </a>
+                </div>
+                <div className={style.inputPost}>
+                    <input placeholder={'Anything new?'}></input>
+                </div>
             </div>
-            <div className={style.inputPost}>
-                <input placeholder={'Anything new?'}></input>
+            <div className={style.publishLine}>
+                <button className={style.publishPost}>Publish</button>
             </div>
         </div>
     );

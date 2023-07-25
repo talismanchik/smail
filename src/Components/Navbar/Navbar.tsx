@@ -5,48 +5,54 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import NewspaperOutlinedIcon from "@mui/icons-material/NewspaperOutlined";
 import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import {NavLink} from "react-router-dom";
 
 export const Navbar = () => {
     return (
         <nav className={style.nav}>
             <div className={style.LeftMenuItem}>
-                <a className={style.LeftMenuItem_Label}>
+                <NavLink to={'/profile'}
+                    className={style.LeftMenuItem_Label}>
                     <AccountCircleOutlinedIcon
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
                     <span>My page</span>
-                </a>
+                </NavLink>
             </div>
             <div className={style.LeftMenuItem}>
-                <a className={style.LeftMenuItem_Label}>
+                <NavLink to={'/messenger'}
+                    className={style.LeftMenuItem_Label}>
                     <ChatBubbleOutlineOutlinedIcon
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
-                    <span>Messenger</span></a>
+                    <span>Messenger</span></NavLink>
             </div>
             <div className={style.LeftMenuItem}>
-                <a className={style.LeftMenuItem_Label}>
+                <NavLink to={'/news'}
+                    className={style.LeftMenuItem_Label}>
                     <NewspaperOutlinedIcon
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
                     <span>News</span>
-                </a>
+                </NavLink>
             </div>
             <div className={style.LeftMenuItem}>
-                <a className={style.LeftMenuItem_Label}>
+                <NavLink to={'/music'}
+                    className={style.LeftMenuItem_Label}>
                     <LibraryMusicOutlinedIcon
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
                     <span>Music</span>
-                </a>
+                </NavLink>
             </div>
             <div className={style.LeftMenuItem}>
-                <a className={style.LeftMenuItem_Label}>
+                <NavLink
+                    to={'/settings'}className={style.LeftMenuItem_Label}>
                     <SettingsOutlinedIcon
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
                     <span>Settings</span>
-                </a>
+                </NavLink>
             </div>
         </nav>
     );
