@@ -1,15 +1,19 @@
 import React from 'react';
 import style from './Profile.module.scss'
-import ava from '../../photo/IMG_20190901_215506_989.jpg'
 import {ProfileHeader} from "./ProfileHeader/ProfileHeader";
 import {ProfileSplitLayout} from "./ProfileSpliteLayout/ProfileSplitLayout";
+import {postType} from "../../App";
 
-export const Profile = () => {
+type WallModulePropsType = {
+    posts: postType[]
+}
+
+export const Profile = (props: WallModulePropsType) => {
     return (
         <div className={style.profileContainer}>
             <ProfileHeader/>
             <div className={style.airHidden}></div>
-            <ProfileSplitLayout/>
+            <ProfileSplitLayout posts={props.posts}/>
         </div>
     );
 };

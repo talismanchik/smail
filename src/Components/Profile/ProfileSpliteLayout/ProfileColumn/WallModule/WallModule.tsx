@@ -1,8 +1,25 @@
 import React from 'react';
 import style from './WallModule.module.scss'
 import {Post} from "./Post/Post";
+import {postType} from "../../../../../App";
 
-export const WallModule = () => {
+type WallModulePropsType = {
+    posts: postType[]
+}
+
+
+export const WallModule = (props: WallModulePropsType) => {
+
+    const postDisplay = props.posts.map((el, index)=>
+        <Post lastPost={el.lastPost}
+              name={el.name}
+              text={el.text}
+              likes={el.likes}
+              comments={el.comments}
+              time={el.time}
+        />
+    )
+
     return (
         <div className={style.wallModuleContainer}>
             <div className={style.wallModuleHeader}>
@@ -19,20 +36,7 @@ export const WallModule = () => {
                 </div>
             </div>
             <div className={style.wallModulePosts}>
-                <Post lastPost={true}
-                      name={'Eugene Nesterenko'}
-                      text={'This is last post'}
-                      likes={0}
-                      comments={0}
-                      time={'yesterday at 17:26'}
-                />
-                <Post lastPost={false}
-                      name={'Eugene Nesterenko'}
-                      text={'Hello World!'}
-                      likes={15}
-                      comments={1}
-                      time={'yesterday at 16:22'}
-                />
+                {postDisplay}
                 {/*<div className={style.wallEmpty}>*/}
                 {/*    There are no posts on the wall yet*/}
                 {/*</div>*/}

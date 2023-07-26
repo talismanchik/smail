@@ -20,9 +20,9 @@ function App() {
                 <Navbar/>
                 <div className={style.content}>
                     <Routes>
-                        <Route path={'/'} element={<Profile/>}/>
+                        <Route path={'/'} element={<Profile posts={postsArray}/>}/>
                         <Route path='/profile'
-                               element={<Profile/>}/>
+                               element={<Profile posts={postsArray}/>}/>
                         <Route path='/messenger'
                                element={<Messenger/>}/>
                         <Route path={'/messenger/:id'}
@@ -40,5 +40,33 @@ function App() {
         </BrowserRouter>
     )
 }
-
 export default App;
+
+// посты для основной страницы
+const postsArray = [
+    {
+        lastPost: true,
+        name: 'Eugene Nesterenko',
+        text: 'This is last post',
+        likes: 0,
+        comments: 0,
+        time: 'yesterday at 17:26',
+    },
+    {
+        lastPost: false,
+        name: 'Eugene Nesterenko',
+        text: 'Hello World!',
+        likes: 16,
+        comments: 1,
+        time: 'yesterday at 12:34',
+    }
+]
+export type postType = {
+    lastPost: boolean,
+    name: string,
+    text: string,
+    likes: number,
+    comments: number,
+    time: string
+}
+

@@ -3,7 +3,7 @@
 .appWrapper {
   display: grid;
   background-color: $bgColorWindow;
-  height: 100vh;
+  min-height: 100vh;
   padding-bottom: 20px;
 
   grid-template-rows: 49px 1fr;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ava from '../../../../../../photo/IMG_20190901_215506_989.jpg'
+import ava from '../../../../../photo/IMG_20190901_215506_989.jpg'
 import style from './SubmitPost.module.scss'
 
 export const SubmitPost = () => {

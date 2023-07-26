@@ -5,6 +5,7 @@ import {Companion} from "./Сompanion/Companion";
 import avatar1 from '../../Common/avatars/avatar1.avif'
 import avatar2 from '../../Common/avatars/avatar2.avif'
 import avatar3 from '../../Common/avatars/avatar3.jpg'
+import {TalkWindow} from "./TalkWindow/TalkWindow";
 
 type dialogsDateType = {
     name: string,
@@ -37,11 +38,7 @@ export const Messenger = () => {
                     {mapToCompanion}
                 </div>
             </div>
-            <div className={style.history_Container}>
-                <div className={style.chatHeader}></div>
-                <div className={style.chatBody}></div>
-                <div className={style.chatInput}></div>
-            </div>
+            <TalkWindow/>
         </div>
     );
 };

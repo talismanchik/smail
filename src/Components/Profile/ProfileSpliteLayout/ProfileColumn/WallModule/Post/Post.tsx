@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Post.module.scss'
-import ava from '../../../../../../../photo/IMG_20190901_215506_989.jpg'
+import ava from '../../../../../../photo/IMG_20190901_215506_989.jpg'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
