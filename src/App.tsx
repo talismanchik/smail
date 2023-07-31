@@ -8,8 +8,16 @@ import {Messenger} from "./Components/Messages/Messenger";
 import {News} from "./Components/News/News";
 import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
+import {dialogsDateType} from "./redux/state";
 
-function App() {
+type AppPropsType = {
+    state: {
+        posts: postType[],
+        dialogs: dialogsDateType[]
+    }
+}
+
+function App(props: AppPropsType) {
 
     return (
         <BrowserRouter>
@@ -20,13 +28,13 @@ function App() {
                 <Navbar/>
                 <div className={style.content}>
                     <Routes>
-                        <Route path={'/'} element={<Profile posts={postsArray}/>}/>
+                        <Route path={'/'} element={<Profile posts={props.state.posts}/>}/>
                         <Route path='/profile'
-                               element={<Profile posts={postsArray}/>}/>
+                               element={<Profile posts={props.state.posts}/>}/>
                         <Route path='/messenger'
-                               element={<Messenger/>}/>
+                               element={<Messenger dialogs={props.state.dialogs}/>}/>
                         <Route path={'/messenger/:id'}
-                               element={<Messenger/>}/>
+                               element={<Messenger dialogs={props.state.dialogs}/>}/>
                         <Route path='/news'
                                element={<News/>}/>
                         <Route path='/music'
@@ -40,6 +48,7 @@ function App() {
         </BrowserRouter>
     )
 }
+
 export default App;
 
 // посты для основной страницы

@@ -2,22 +2,16 @@ import React from 'react';
 import style from './Messanger.module.scss'
 import SearchIcon from '@mui/icons-material/Search';
 import {Companion} from "./Сompanion/Companion";
-import avatar1 from '../../Common/avatars/avatar1.avif'
-import avatar2 from '../../Common/avatars/avatar2.avif'
-import avatar3 from '../../Common/avatars/avatar3.jpg'
 import {TalkWindow} from "./TalkWindow/TalkWindow";
+import {dialogsDateType} from "../../redux/state";
 
-type dialogsDateType = {
-    name: string,
-    avatar: string,
-    id: string,
-    lastMessage: string,
-    sendDate: string,
+type dialogsPropsType = {
+    dialogs: dialogsDateType[]
 }
 
-export const Messenger = () => {
+export const Messenger = (props: dialogsPropsType) => {
 
-    const mapToCompanion = dialogsDate.map((el, key) =>
+    const mapToCompanion = props.dialogs.map((el, key) =>
         <Companion key={key}
                    avatar={el.avatar}
                    name={el.name}
@@ -43,26 +37,4 @@ export const Messenger = () => {
     );
 };
 
-const dialogsDate: dialogsDateType[] = [
-    {
-        name: 'Mister Bot',
-        avatar: avatar1,
-        lastMessage: 'Welcome!',
-        sendDate: '12 Jul',
-        id: '1',
-    },
-    {
-        name: 'Maksim Bigudinsky',
-        avatar: avatar2,
-        lastMessage: 'Are you ok?',
-        sendDate: '11 Jul',
-        id: '2',
-    },
-    {
-        name: 'MAnastasya Gmyr',
-        avatar: avatar3,
-        lastMessage: 'ok',
-        sendDate: '10 Jul',
-        id: '3',
-    }
-]
+

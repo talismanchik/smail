@@ -7,6 +7,7 @@
   box-shadow: 0 0 1px $block_shadow;
   width: 911px;
   display: flex;
+  overflow: auto;
 
 
   .dialogs {
@@ -103,20 +104,64 @@
         }
       }
     }
+  }
 
-    .history_Container {
+  .history_Container {
 
-      .chatHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
 
+    .chatHeader {
+      height: 48px;
+      border-bottom: 1px solid rgba(98, 109, 122, 0.2);
+      display: flex;
+      justify-content: space-between;
+
+      .chatHeaderTitle {
+        padding: 15px 20px;
+        font-weight: 500;
+        font-size: 14px;
       }
 
-      .chatBody {
+      .chatHeaderAside {
+        display: flex;
+        padding: 9px 20px 9px 15px;
+
+        .MoreHorizIcon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.4;
+
+        }
+
+
+        .headerAvatar {
+          overflow: hidden;
+          height: 30px;
+          width: 30px;
+          margin-left: 11px;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
 
       }
+    }
 
-      .chatInput {
+    .chatBody {
 
-      }
+    }
+
+    .chatInput {
+      height: 62px;
+      border-top: 1px solid rgba(98, 109, 122, 0.2);
     }
   }
 }
