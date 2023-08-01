@@ -7,7 +7,7 @@
   box-shadow: 0 0 1px $block_shadow;
   width: 911px;
   display: flex;
-
+  height: 88vh;
 
 
   .dialogs {
@@ -111,9 +111,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     flex: 2;
 
     .chatHeader {
+      width: 100%;
       height: 48px;
       border-bottom: 1px solid rgba(98, 109, 122, 0.2);
       display: flex;
@@ -156,10 +158,38 @@
     }
 
     .chatBody {
+      width: 90%;
+      flex: 2;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+
+
+      .messageContainer {
+        box-sizing: border-box;
+        min-height: 32px;
+        background-color: $bgColorWindow;
+        margin-bottom: 6px;
+        border-radius: 0.75rem;
+
+        .textContent {
+
+          .messageMeta {
+
+          }
+        }
+      }
+
+      .myMessageTrue {
+        align-self: flex-end;
+      }
+
 
     }
 
+
     .chatInput {
+      width: 100%;
       height: 62px;
       border-top: 1px solid rgba(98, 109, 122, 0.2);
       display: flex;
