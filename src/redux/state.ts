@@ -4,11 +4,12 @@ import avatar3 from "../Common/avatars/avatar3.jpg";
 
 type stateType = {
     posts: postType[],
-    dialogs: dialogsDateType[]
+    dialogs: dialogsDateType[],
+    messages: messagesType[],
 }
 
-export const state = {
-    posts:[
+export const state: stateType = {
+    posts: [
         {
             lastPost: true,
             name: 'Eugene Nesterenko',
@@ -49,13 +50,15 @@ export const state = {
             id: '3',
         }
     ],
+    messages: [
+        {id: '4', time: '12:37', textMessage: 'today!!!', myMessage: true},
+        {id: '3', time: '12:36', textMessage: 'when we will make our app?', myMessage: false},
+        {id: '2', time: '12:35', textMessage: 'Hello my dear friends', myMessage: true},
+        {id: '1', time: '12:34', textMessage: 'Hi', myMessage: false},
+    ],
 }
 
-
-
-
-
-
+// TYPES
 export type postType = {
     lastPost: boolean,
     name: string,
@@ -64,11 +67,16 @@ export type postType = {
     comments: number,
     time: string
 }
-
 export type dialogsDateType = {
     name: string,
     avatar: string,
     id: string,
     lastMessage: string,
     sendDate: string,
+}
+export type messagesType = {
+    id: string,
+    time: string,
+    textMessage: string,
+    myMessage: boolean,
 }

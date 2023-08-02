@@ -4,6 +4,7 @@ import style from '../../../Messanger.module.scss'
 type MessagePropsType = {
     // avatar?: string,
     // name: string,
+    id: string,
     time: string,
     textMessage: string,
     myMessage: boolean

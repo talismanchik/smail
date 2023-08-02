@@ -3,12 +3,17 @@ import style from "../Messanger.module.scss";
 import {ChatHeader} from "./ChatHeader/ChatHeader";
 import {ChatBody} from "./ChatBody/ChatBody";
 import {ChatInput} from "./ChatInput/ChatInput";
+import {messagesType} from "../../../redux/state";
 
-export const TalkWindow = () => {
+type TalkWindowPropsType = {
+    messages: messagesType[],
+}
+
+export const TalkWindow = (props: TalkWindowPropsType) => {
     return (
         <div className={style.history_Container}>
             <ChatHeader/>
-            <ChatBody/>
+            <ChatBody messages={props.messages}/>
             <ChatInput/>
         </div>
     );

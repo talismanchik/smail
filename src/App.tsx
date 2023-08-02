@@ -3,24 +3,24 @@ import style from './App.module.scss'
 import {Header} from "./Components/Header/Header";
 import {Navbar} from "./Components/Navbar/Navbar";
 import {Profile} from "./Components/Profile/Profile";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {Messenger} from "./Components/Messages/Messenger";
 import {News} from "./Components/News/News";
 import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
-import {dialogsDateType} from "./redux/state";
+import {dialogsDateType, messagesType} from "./redux/state";
 
 type AppPropsType = {
     state: {
         posts: postType[],
-        dialogs: dialogsDateType[]
+        dialogs: dialogsDateType[],
+        messages: messagesType[],
     }
 }
 
 function App(props: AppPropsType) {
 
     return (
-        <BrowserRouter>
             <div className={style.appWrapper}>
                 <div className={style.header}>
                     <Header/>
@@ -32,9 +32,9 @@ function App(props: AppPropsType) {
                         <Route path='/profile'
                                element={<Profile posts={props.state.posts}/>}/>
                         <Route path='/messenger'
-                               element={<Messenger dialogs={props.state.dialogs}/>}/>
+                               element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
                         <Route path={'/messenger/:id'}
-                               element={<Messenger dialogs={props.state.dialogs}/>}/>
+                               element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
                         <Route path='/news'
                                element={<News/>}/>
                         <Route path='/music'
@@ -45,7 +45,6 @@ function App(props: AppPropsType) {
                     </Routes>
                 </div>
             </div>
-        </BrowserRouter>
     )
 }
 

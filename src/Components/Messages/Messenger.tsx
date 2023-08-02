@@ -3,10 +3,12 @@ import style from './Messanger.module.scss'
 import SearchIcon from '@mui/icons-material/Search';
 import {Companion} from "./Сompanion/Companion";
 import {TalkWindow} from "./TalkWindow/TalkWindow";
-import {dialogsDateType} from "../../redux/state";
+import {dialogsDateType, messagesType} from "../../redux/state";
 
 type dialogsPropsType = {
-    dialogs: dialogsDateType[]
+    dialogs: dialogsDateType[],
+    messages: messagesType[],
+
 }
 
 export const Messenger = (props: dialogsPropsType) => {
@@ -32,7 +34,7 @@ export const Messenger = (props: dialogsPropsType) => {
                     {mapToCompanion}
                 </div>
             </div>
-            <TalkWindow/>
+            <TalkWindow messages={props.messages}/>
         </div>
     );
 };
