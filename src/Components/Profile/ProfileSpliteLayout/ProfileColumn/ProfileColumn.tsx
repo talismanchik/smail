@@ -6,13 +6,14 @@ import {postType} from "../../../../App";
 
 type WallModulePropsType = {
     posts: postType[]
+    addPost: (textPost: string)=>void
 }
 
 export const ProfileColumn = (props: WallModulePropsType) => {
     return (
         <div>
             <div className={style.profileColumnContainer}>
-                <SubmitPost/>
+                <SubmitPost addPost={props.addPost}/>
                 <div className={style.airHidden}></div>
                 <WallModule posts={props.posts}/>
             </div>

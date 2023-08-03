@@ -5,7 +5,8 @@ import {ProfileSplitLayout} from "./ProfileSpliteLayout/ProfileSplitLayout";
 import {postType} from "../../App";
 
 type WallModulePropsType = {
-    posts: postType[]
+    posts: postType[],
+    addPost: (textPost: string)=>void
 }
 
 export const Profile = (props: WallModulePropsType) => {
@@ -13,7 +14,7 @@ export const Profile = (props: WallModulePropsType) => {
         <div className={style.profileContainer}>
             <ProfileHeader/>
             <div className={style.airHidden}></div>
-            <ProfileSplitLayout posts={props.posts}/>
+            <ProfileSplitLayout posts={props.posts} addPost={props.addPost}/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './App.module.scss'
 import {Header} from "./Components/Header/Header";
 import {Navbar} from "./Components/Navbar/Navbar";
@@ -9,6 +9,7 @@ import {News} from "./Components/News/News";
 import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
 import {dialogsDateType, messagesType} from "./redux/state";
+import {elGR} from "@mui/material/locale";
 
 type AppPropsType = {
     state: {
@@ -20,31 +21,47 @@ type AppPropsType = {
 
 function App(props: AppPropsType) {
 
+    const [posts, setPosts] = useState<postType[]>(props.state.posts)
+
+    const addPost = (textPost: string) => {
+        const newPost: postType = {
+            lastPost: true,
+            name: 'Eugene Nesterenko',
+            text: textPost,
+            likes: 0,
+            comments: 0,
+            time: 'yesterday at 23:46'
+        }
+        const newPosts = posts.map(el => el.lastPost ? {...el, lastPost: false} : el)
+        setPosts([newPost, ...newPosts])
+    }
+
+
     return (
-            <div className={style.appWrapper}>
-                <div className={style.header}>
-                    <Header/>
-                </div>
-                <Navbar/>
-                <div className={style.content}>
-                    <Routes>
-                        <Route path={'/'} element={<Profile posts={props.state.posts}/>}/>
-                        <Route path='/profile'
-                               element={<Profile posts={props.state.posts}/>}/>
-                        <Route path='/messenger'
-                               element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
-                        <Route path={'/messenger/:id'}
-                               element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
-                        <Route path='/news'
-                               element={<News/>}/>
-                        <Route path='/music'
-                               element={<Music/>}/>
-                        <Route path='/settings'
-                               element={<Settings/>}/>
-                        <Route path='*' element={<h1>404: PAGE NOT FOUND</h1>}/>
-                    </Routes>
-                </div>
+        <div className={style.appWrapper}>
+            <div className={style.header}>
+                <Header/>
             </div>
+            <Navbar/>
+            <div className={style.content}>
+                <Routes>
+                    <Route path={'/'} element={<Profile posts={posts} addPost={addPost}/>}/>
+                    <Route path='/profile'
+                           element={<Profile posts={posts} addPost={addPost}/>}/>
+                    <Route path='/messenger'
+                           element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
+                    <Route path={'/messenger/:id'}
+                           element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
+                    <Route path='/news'
+                           element={<News/>}/>
+                    <Route path='/music'
+                           element={<Music/>}/>
+                    <Route path='/settings'
+                           element={<Settings/>}/>
+                    <Route path='*' element={<h1>404: PAGE NOT FOUND</h1>}/>
+                </Routes>
+            </div>
+        </div>
     )
 }
 
