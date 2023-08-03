@@ -8,6 +8,7 @@ import {dialogsDateType, messagesType} from "../../redux/state";
 type dialogsPropsType = {
     dialogs: dialogsDateType[],
     messages: messagesType[],
+    addMessage: (message: string) => void
 
 }
 
@@ -34,7 +35,7 @@ export const Messenger = (props: dialogsPropsType) => {
                     {mapToCompanion}
                 </div>
             </div>
-            <TalkWindow messages={props.messages}/>
+            <TalkWindow messages={props.messages} addMessage={props.addMessage}/>
         </div>
     );
 };

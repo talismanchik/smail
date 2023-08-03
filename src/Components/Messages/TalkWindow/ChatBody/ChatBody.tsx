@@ -16,36 +16,6 @@ export const ChatBody = (props: ChatBodyPropsType) => {
     return (
         <div className={style.chatBody}>
             {mapToMessages}
-
-            {/*<Message*/}
-            {/*    // name={'Eugene Nesterenko'}*/}
-            {/*    // avatar={avatar2}*/}
-            {/*    time={'12:37'}*/}
-            {/*    textMessage={'today!!!'}*/}
-            {/*    myMessage={true}*/}
-            {/*/>*/}
-            {/*<Message*/}
-            {/*    // name={'Anastasya Gmyr'}*/}
-            {/*    // avatar={avatar1}*/}
-            {/*    time={'12:36'}*/}
-            {/*    textMessage={'when we will make our app?'}*/}
-            {/*    myMessage={false}*/}
-            {/*/>*/}
-            {/*<Message*/}
-            {/*    // name={'Eugene Nesterenko'}*/}
-            {/*    // avatar={avatar2}*/}
-            {/*    time={'12:35'}*/}
-            {/*    textMessage={'Hello my dear friends'}*/}
-            {/*    myMessage={true}*/}
-            {/*/>*/}
-            {/*<Message*/}
-            {/*    // name={'Anastasya Gmyr'}*/}
-            {/*    // avatar={avatar1}*/}
-            {/*    time={'12:34'}*/}
-            {/*    textMessage={'Hi'}*/}
-            {/*    myMessage={false}*/}
-            {/*/>*/}
-
         </div>
     );
 };

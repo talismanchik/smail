@@ -9,7 +9,6 @@ import {News} from "./Components/News/News";
 import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
 import {dialogsDateType, messagesType} from "./redux/state";
-import {elGR} from "@mui/material/locale";
 
 type AppPropsType = {
     state: {
@@ -22,7 +21,7 @@ type AppPropsType = {
 function App(props: AppPropsType) {
 
     const [posts, setPosts] = useState<postType[]>(props.state.posts)
-
+    const [messages, setMessages] = useState(props.state.messages)
     const addPost = (textPost: string) => {
         const newPost: postType = {
             lastPost: true,
@@ -34,6 +33,10 @@ function App(props: AppPropsType) {
         }
         const newPosts = posts.map(el => el.lastPost ? {...el, lastPost: false} : el)
         setPosts([newPost, ...newPosts])
+    }
+    const addMessage = (message: string) => {
+        const newMessage: messagesType = {id: '5', time: '12:38', textMessage: message, myMessage: true}
+    setMessages([newMessage, ...messages])
     }
 
 
@@ -49,9 +52,15 @@ function App(props: AppPropsType) {
                     <Route path='/profile'
                            element={<Profile posts={posts} addPost={addPost}/>}/>
                     <Route path='/messenger'
-                           element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
+                           element={<Messenger dialogs={props.state.dialogs}
+                                               messages={messages}
+                                               addMessage={addMessage}
+                           />}/>
                     <Route path={'/messenger/:id'}
-                           element={<Messenger dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
+                           element={<Messenger dialogs={props.state.dialogs}
+                                               messages={messages}
+                                               addMessage={addMessage}
+                           />}/>
                     <Route path='/news'
                            element={<News/>}/>
                     <Route path='/music'
