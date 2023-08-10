@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {state} from './redux/state'
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import {store} from "./redux/store";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <BrowserRouter>
-    <App state={state}/>
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </BrowserRouter>
 );
 reportWebVitals();

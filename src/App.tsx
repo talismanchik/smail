@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './App.module.scss'
 import {Header} from "./Components/Header/Header";
 import {Navbar} from "./Components/Navbar/Navbar";
@@ -8,35 +8,35 @@ import {Messenger} from "./Components/Messages/Messenger";
 import {News} from "./Components/News/News";
 import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
-import {dialogsDateType, messagesType} from "./redux/state";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "./redux/store";
+import {addPostAC, profileType} from "./redux/Profile-reducer";
+import {addMessageAC, messengerType} from "./redux/MessengerReducer";
 
-type AppPropsType = {
-    state: {
-        posts: postType[],
-        dialogs: dialogsDateType[],
-        messages: messagesType[],
-    }
-}
 
-function App(props: AppPropsType) {
-
-    const [posts, setPosts] = useState<postType[]>(props.state.posts)
-    const [messages, setMessages] = useState(props.state.messages)
+function App() {
+    const posts = useSelector<AppRootStateType, postType[]>(state => state.profileDate.posts)
+    const messengerDate = useSelector<AppRootStateType, messengerType>(state => state.messengerDate)
+    const dispatch = useDispatch();
+    // const [posts, setPosts] = useState<postType[]>(props.state.posts)
+    // const [messages, setMessages] = useState(props.state.messages)
     const addPost = (textPost: string) => {
-        const newPost: postType = {
-            lastPost: true,
-            name: 'Eugene Nesterenko',
-            text: textPost,
-            likes: 0,
-            comments: 0,
-            time: 'yesterday at 23:46'
-        }
-        const newPosts = posts.map(el => el.lastPost ? {...el, lastPost: false} : el)
-        setPosts([newPost, ...newPosts])
+        dispatch(addPostAC(textPost))
+        // const newPost: postType = {
+        //     lastPost: true,
+        //     name: 'Eugene Nesterenko',
+        //     text: textPost,
+        //     likes: 0,
+        //     comments: 0,
+        //     time: 'yesterday at 23:46'
+        // }
+        // const newPosts = posts.map(el => el.lastPost ? {...el, lastPost: false} : el)
+        // setPosts([newPost, ...newPosts])
     }
-    const addMessage = (message: string) => {
-        const newMessage: messagesType = {id: '5', time: '12:38', textMessage: message, myMessage: true}
-    setMessages([newMessage, ...messages])
+    const addMessage = (message: string, IdDialog: string) => {
+        dispatch(addMessageAC(message, IdDialog))
+        // const newMessage: messagesType = {id: '5', time: '12:38', textMessage: message, myMessage: true}
+        // setMessages([newMessage, ...messages])
     }
 
 
@@ -52,13 +52,11 @@ function App(props: AppPropsType) {
                     <Route path='/profile'
                            element={<Profile posts={posts} addPost={addPost}/>}/>
                     <Route path='/messenger'
-                           element={<Messenger dialogs={props.state.dialogs}
-                                               messages={messages}
+                           element={<Messenger messengerDate={messengerDate}
                                                addMessage={addMessage}
                            />}/>
                     <Route path={'/messenger/:id'}
-                           element={<Messenger dialogs={props.state.dialogs}
-                                               messages={messages}
+                           element={<Messenger messengerDate={messengerDate}
                                                addMessage={addMessage}
                            />}/>
                     <Route path='/news'

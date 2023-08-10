@@ -7,7 +7,8 @@ import {messagesType} from "../../../redux/state";
 
 type TalkWindowPropsType = {
     messages: messagesType[],
-    addMessage: (message: string) => void
+    addMessage: (message: string, IdDialog: string) => void
+    idDialog: string
 }
 
 export const TalkWindow = (props: TalkWindowPropsType) => {
@@ -17,7 +18,7 @@ export const TalkWindow = (props: TalkWindowPropsType) => {
         setTextMessage(e.currentTarget.value)
     }
     const addMessage=()=>{
-        props.addMessage(textMessage)
+        props.addMessage(textMessage, props.idDialog)
         setTextMessage('')
     }
 
