@@ -10,7 +10,7 @@ import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./redux/store";
-import {addPostAC, profileType} from "./redux/Profile-reducer";
+import {addPostAC} from "./redux/Profile-reducer";
 import {addMessageAC, messengerType} from "./redux/MessengerReducer";
 
 
@@ -18,26 +18,13 @@ function App() {
     const posts = useSelector<AppRootStateType, postType[]>(state => state.profileDate.posts)
     const messengerDate = useSelector<AppRootStateType, messengerType>(state => state.messengerDate)
     const dispatch = useDispatch();
-    // const [posts, setPosts] = useState<postType[]>(props.state.posts)
-    // const [messages, setMessages] = useState(props.state.messages)
+
     const addPost = (textPost: string) => {
         dispatch(addPostAC(textPost))
-        // const newPost: postType = {
-        //     lastPost: true,
-        //     name: 'Eugene Nesterenko',
-        //     text: textPost,
-        //     likes: 0,
-        //     comments: 0,
-        //     time: 'yesterday at 23:46'
-        // }
-        // const newPosts = posts.map(el => el.lastPost ? {...el, lastPost: false} : el)
-        // setPosts([newPost, ...newPosts])
     }
     const addMessage = (message: string, IdDialog: string) => {
         dispatch(addMessageAC(message, IdDialog))
-        // const newMessage: messagesType = {id: '5', time: '12:38', textMessage: message, myMessage: true}
-        // setMessages([newMessage, ...messages])
-    }
+       }
 
 
     return (
