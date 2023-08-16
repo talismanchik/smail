@@ -61,25 +61,6 @@ function App() {
 
 export default App;
 
-// посты для основной страницы
-// const postsArray = [
-//     {
-//         lastPost: true,
-//         name: 'Eugene Nesterenko',
-//         text: 'This is last post',
-//         likes: 0,
-//         comments: 0,
-//         time: 'yesterday at 17:26',
-//     },
-//     {
-//         lastPost: false,
-//         name: 'Eugene Nesterenko',
-//         text: 'Hello World!',
-//         likes: 16,
-//         comments: 1,
-//         time: 'yesterday at 12:34',
-//     }
-// ]
 export type postType = {
     lastPost: boolean,
     name: string,
