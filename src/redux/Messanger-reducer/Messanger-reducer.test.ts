@@ -1,7 +1,7 @@
-import {addMessageAC, messengerReducer, messengerType} from "./MessengerReducer";
-import avatar1 from "../Common/avatars/avatar1.avif";
-import avatar2 from "../Common/avatars/avatar2.avif";
-import avatar3 from "../Common/avatars/avatar3.jpg";
+import {addMessageAC, messengerReducer, messengerType} from "./Messenger-reducer";
+import avatar1 from "../../Common/avatars/avatar1.avif";
+import avatar2 from "../../Common/avatars/avatar2.avif";
+import avatar3 from "../../Common/avatars/avatar3.jpg";
 
 let startState: messengerType = {
     dialogs: [

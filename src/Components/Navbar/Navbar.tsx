@@ -6,6 +6,7 @@ import NewspaperOutlinedIcon from "@mui/icons-material/NewspaperOutlined";
 import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import {NavLink} from "react-router-dom";
+import GroupIcon from '@mui/icons-material/Group';
 
 export const Navbar = () => {
     return (
@@ -43,6 +44,15 @@ export const Navbar = () => {
                         fontSize='small'
                         className={style.LeftMenuItem_Icon}/>
                     <span>Music</span>
+                </NavLink>
+            </div>
+            <div className={style.LeftMenuItem}>
+                <NavLink to={'/users'}
+                         className={style.LeftMenuItem_Label}>
+                    <GroupIcon
+                        fontSize='small'
+                        className={style.LeftMenuItem_Icon}/>
+                    <span>Users</span>
                 </NavLink>
             </div>
             <div className={style.LeftMenuItem}>

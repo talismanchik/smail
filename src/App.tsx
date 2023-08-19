@@ -10,8 +10,9 @@ import {Music} from "./Components/Music/Music";
 import {Settings} from "./Components/Settings/Settings";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./redux/store";
-import {addPostAC} from "./redux/Profile-reducer";
-import {addMessageAC, messengerType} from "./redux/MessengerReducer";
+import {addPostAC} from "./redux/Profile-reducer/Profile-reducer";
+import {addMessageAC, messengerType} from "./redux/Messanger-reducer/Messenger-reducer";
+import {Users} from "./Components/Users/Users";
 
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
                            element={<Messenger messengerDate={messengerDate}
                                                addMessage={addMessage}
                            />}/>
+                    <Route path='/users'
+                           element={<Users/>}/>
                     <Route path='/news'
                            element={<News/>}/>
                     <Route path='/music'

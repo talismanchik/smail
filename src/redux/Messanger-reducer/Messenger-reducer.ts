@@ -1,6 +1,6 @@
-import avatar1 from "../Common/avatars/avatar1.avif";
-import avatar2 from "../Common/avatars/avatar2.avif";
-import avatar3 from "../Common/avatars/avatar3.jpg";
+import avatar1 from "../../Common/avatars/avatar1.avif";
+import avatar2 from "../../Common/avatars/avatar2.avif";
+import avatar3 from "../../Common/avatars/avatar3.jpg";
 
 type ActionsType = | ReturnType<typeof addMessageAC>
 

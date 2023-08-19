@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import {Companion} from "./Сompanion/Companion";
 import {TalkWindow} from "./TalkWindow/TalkWindow";
 import {dialogsDateType, messagesType} from "../../redux/state";
-import {messengerType} from "../../redux/MessengerReducer";
+import {messengerType} from "../../redux/Messanger-reducer/Messenger-reducer";
 
 type dialogsPropsType = {
     messengerDate: messengerType

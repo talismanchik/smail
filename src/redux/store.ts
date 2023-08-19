@@ -1,6 +1,6 @@
 import {combineReducers, legacy_createStore} from "redux";
-import {messengerReducer} from "./MessengerReducer";
-import {profileReducer} from "./Profile-reducer";
+import {messengerReducer} from "./Messanger-reducer/Messenger-reducer";
+import {profileReducer} from "./Profile-reducer/Profile-reducer";
 
 // объединяя reducer-ы с помощью combineReducers,
 // мы задаём структуру нашего единственного объекта-состояния
