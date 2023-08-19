@@ -1,4 +1,4 @@
-const initialState: stateType = {
+const initialState: usersStateType = {
     users: [
         {
             id: '1',
@@ -24,7 +24,7 @@ const initialState: stateType = {
     ]
 }
 
-export const usersReducer = (state: stateType = initialState, action: ActionType): stateType => {
+export const usersReducer = (state: usersStateType = initialState, action: ActionType): usersStateType => {
     switch (action.type) {
         case 'FOLLOW':{
             return {...state, users: state.users.map(el=> el.id === action.userID? {...el, followed: true} : el)}
@@ -33,7 +33,7 @@ export const usersReducer = (state: stateType = initialState, action: ActionType
             return {...state, users: state.users.map(el=> el.id === action.userID? {...el, followed: false} : el)}
         }
         case "SET_USERS":{
-            return {...state, users: [...state.users, action.users]}
+            return {...state, users: [...state.users, ...action.users]}
         }
         default:
             return state
@@ -43,7 +43,7 @@ export const usersReducer = (state: stateType = initialState, action: ActionType
 //ACTIONS
 export const followAC = (userID: string) => ({type: 'FOLLOW', userID}) as const
 export const unfollowAC = (userID: string) => ({type: 'UNFOLLOW', userID}) as const
-export const setUsersAC = (users: userType) => ({type: 'SET_USERS', users}) as const
+export const setUsersAC = (users: userType[]) => ({type: 'SET_USERS', users}) as const
 
 //TYPES
 
@@ -52,10 +52,10 @@ type ActionType =
     | ReturnType<typeof unfollowAC>
     | ReturnType<typeof setUsersAC>
 
-type stateType = {
+export type usersStateType = {
     users: userType[]
 }
-type userType = {
+export type userType = {
     id: string,
     followed: boolean,
     fullName: string,
