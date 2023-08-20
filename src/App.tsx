@@ -13,11 +13,13 @@ import {AppRootStateType} from "./redux/store";
 import {addPostAC} from "./redux/Profile-reducer/Profile-reducer";
 import {addMessageAC, messengerType} from "./redux/Messanger-reducer/Messenger-reducer";
 import {Users} from "./Components/Users/Users";
+import {usersStateType} from "./redux/Users-reducer/Users-reduser";
 
 
 function App() {
     const posts = useSelector<AppRootStateType, postType[]>(state => state.profileDate.posts)
     const messengerDate = useSelector<AppRootStateType, messengerType>(state => state.messengerDate)
+    const users = useSelector<AppRootStateType, usersStateType>(state => state.users)
     const dispatch = useDispatch();
 
     const addPost = (textPost: string) => {
@@ -48,7 +50,7 @@ function App() {
                                                addMessage={addMessage}
                            />}/>
                     <Route path='/users'
-                           element={<Users/>}/>
+                           element={<Users users={users}/>}/>
                     <Route path='/news'
                            element={<News/>}/>
                     <Route path='/music'

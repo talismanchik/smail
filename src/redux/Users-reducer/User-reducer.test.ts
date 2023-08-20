@@ -4,6 +4,7 @@ const startState: usersStateType = {
     users: [
         {
             id: '1',
+            avatar: '',
             followed: true,
             fullName: 'Dmitry Razin',
             status: 'I am a boss',
@@ -11,6 +12,7 @@ const startState: usersStateType = {
         },
         {
             id: '2',
+            avatar: '',
             followed: false,
             fullName: 'Sergey Pazhytnov',
             status: 'I am a boss too',
@@ -18,6 +20,7 @@ const startState: usersStateType = {
         },
         {
             id: '3',
+            avatar: '',
             followed: true,
             fullName: 'Elena Mihalckovich',
             status: 'I am not a boss',
@@ -48,6 +51,7 @@ test('the required number of users has been added to the array', ()=>{
 const newUsers: userType[] = [
     {
         id: '4',
+        avatar: '',
         followed: true,
         fullName: 'Dmitry Razin',
         status: 'I am a boss',
@@ -55,6 +59,7 @@ const newUsers: userType[] = [
     },
     {
         id: '5',
+        avatar: '',
         followed: false,
         fullName: 'Sergey Pazhytnov',
         status: 'I am a boss too',
@@ -62,6 +67,7 @@ const newUsers: userType[] = [
     },
     {
         id: '6',
+        avatar: '',
         followed: true,
         fullName: 'Elena Mihalckovich',
         status: 'I am not a boss',

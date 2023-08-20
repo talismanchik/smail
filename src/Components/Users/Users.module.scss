@@ -1,0 +1,159 @@
+@import "../../Common/Styles/colors.module";
+
+.UsersContainer {
+  display: flex;
+  width: 911px;
+
+  .wideColumn {
+    padding: 0 20px;
+    width: 550px;
+    min-height: 150px;
+    background-color: $bgColor;
+    border-radius: 12px;
+    box-shadow: 0 0 1px $block_shadow;
+    display: flex;
+    flex-direction: column;
+
+    .friendsTubs {
+      display: flex;
+      height: 28px;
+      padding: 18px 0 9px 0;
+
+
+      .yourFriends {
+
+      }
+
+      .findFriends {
+        margin-left: 20px;
+
+      }
+
+      button {
+        border-radius: 8px;
+        box-shadow: 0 0 2px $block_shadow;
+        border: none;
+        background-color: $button_bg_color;
+        height: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: $button_text_color;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      .isActive {
+        background-color: $button_bg_primary_color;
+        color: $button_text_primary_color;
+      }
+
+
+    }
+
+    .friendsSearchInputContainer {
+      padding: 8px 0 8px 0;
+
+      .friendsSearchInput {
+        display: flex;
+        box-shadow: 0 0 2px $block_shadow;
+        border-radius: 6px;
+
+        .searchInput {
+          width: 100%;
+          height: 34px;
+          padding: 0 10px;
+          border: none;
+          outline: none;
+        }
+
+        ::-webkit-input-placeholder {
+          color: $color_text_subhead;
+        }
+
+        .searchButton {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 34px;
+          width: 60px;
+          background-color: $button_bg_color;
+          color: $textSecondary;
+          border-left: 1px solid #cbcbcb;
+
+        }
+      }
+    }
+
+    .friendsList {
+      display: flex;
+      flex-direction: column;
+
+      .friendContainer {
+
+        .friendInfo {
+
+          .avatarWrapper {
+            height: 80px;
+            width: 80px;
+
+            .avatar {
+              display: block;
+              border-radius: 50%;
+              width: 80px;
+              height: 80px;
+              overflow: hidden;
+
+              img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          .info {
+
+            .fullName {
+
+            }
+
+            .status {
+
+            }
+
+            .toMessage {
+
+            }
+          }
+
+
+        }
+
+        .actionsButton {
+
+        }
+      }
+    }
+  }
+
+  .narrowColumn {
+    width: 345px;
+    min-height: 150px;
+    margin-left: 16px;
+    background-color: $bgColor;
+    border-radius: 12px;
+    box-shadow: 0 0 1px $block_shadow;
+
+
+    .possibleFriends {
+
+      .headerModule {
+      }
+
+      .possibleFriendsList {
+      }
+
+      .ShowAll {
+      }
+    }
+  }
+}

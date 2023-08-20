@@ -1,7 +1,14 @@
+import avatar3 from "../../Common/avatars/avatar3.jpg";
+import avatar2 from "../../Common/avatars/avatar2.avif";
+import avatar4 from "../../Common/avatars/avatar4.jpg";
+import avatar6 from "../../Common/avatars/avatar6.jpg";
+
+
 const initialState: usersStateType = {
     users: [
         {
             id: '1',
+            avatar: avatar3,
             followed: true,
             fullName: 'Dmitry Razin',
             status: 'I am a boss',
@@ -9,6 +16,7 @@ const initialState: usersStateType = {
         },
         {
             id: '2',
+            avatar: avatar4,
             followed: false,
             fullName: 'Sergey Pazhytnov',
             status: 'I am a boss too',
@@ -16,8 +24,17 @@ const initialState: usersStateType = {
         },
         {
             id: '3',
+            avatar: avatar2,
             followed: true,
             fullName: 'Elena Mihalckovich',
+            status: 'I am not a boss',
+            location: {city: 'Kiev', country: 'Ukraine'}
+        },
+        {
+            id: '4',
+            avatar: avatar6,
+            followed: true,
+            fullName: 'Viktor Polozhin',
             status: 'I am not a boss',
             location: {city: 'Kiev', country: 'Ukraine'}
         },
@@ -57,6 +74,7 @@ export type usersStateType = {
 }
 export type userType = {
     id: string,
+    avatar: string,
     followed: boolean,
     fullName: string,
     status: string,
