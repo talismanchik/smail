@@ -13,7 +13,7 @@ import {AppRootStateType} from "./redux/store";
 import {addPostAC} from "./redux/Profile-reducer/Profile-reducer";
 import {addMessageAC, messengerType} from "./redux/Messanger-reducer/Messenger-reducer";
 import {Users} from "./Components/Users/Users";
-import {usersStateType} from "./redux/Users-reducer/Users-reduser";
+import {followAC, unfollowAC, usersStateType} from "./redux/Users-reducer/Users-reduser";
 
 
 function App() {
@@ -27,7 +27,12 @@ function App() {
     }
     const addMessage = (message: string, IdDialog: string) => {
         dispatch(addMessageAC(message, IdDialog))
-       }
+    }
+    const changeFollowFriend = (id: string, followed: boolean) => {
+        followed
+            ? dispatch(unfollowAC(id))
+            : dispatch(followAC(id))
+    }
 
 
     return (
@@ -50,7 +55,8 @@ function App() {
                                                addMessage={addMessage}
                            />}/>
                     <Route path='/users'
-                           element={<Users users={users}/>}/>
+                           element={<Users users={users}
+                                           changeFollowFriend={changeFollowFriend}/>}/>
                     <Route path='/news'
                            element={<News/>}/>
                     <Route path='/music'

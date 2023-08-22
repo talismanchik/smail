@@ -33,7 +33,7 @@ const initialState: usersStateType = {
         {
             id: '4',
             avatar: avatar6,
-            followed: true,
+            followed: false,
             fullName: 'Viktor Polozhin',
             status: 'I am not a boss',
             location: {city: 'Kiev', country: 'Ukraine'}

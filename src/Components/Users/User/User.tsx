@@ -8,9 +8,16 @@ type UserPropsType = {
     fullName: string,
     status: string,
     location: { city: string, country: string }
+
+    changeFollowFriend: (id: string, followed: boolean)=>void
 }
 
 export const User = (props: UserPropsType) => {
+
+    const changeFollowFriendHandler = ()=>{
+        props.changeFollowFriend(props.id, props.followed)
+    }
+
     return (
         <div className={style.friendContainer}>
             <div className={style.friendInfo}>
@@ -32,7 +39,12 @@ export const User = (props: UserPropsType) => {
                 </div>
             </div>
             <div className={style.actionsButton}>
-                <button>Follow</button>
+                <button onClick={changeFollowFriendHandler}
+                    className={`${style.actionsButton} ${props.followed? style.unfollow: style.follow}`}>
+                    <span>{props.followed
+                    ? 'Unfollow'
+                    : 'Follow'}</span>
+                </button>
             </div>
         </div>
     );

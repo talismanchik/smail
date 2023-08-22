@@ -6,6 +6,7 @@ import {User} from "./User/User";
 
 type UsersPropsType = {
     users: usersStateType
+    changeFollowFriend: (id: string, followed: boolean)=>void
 }
 
 export const Users = (props: UsersPropsType) => {
@@ -17,7 +18,9 @@ export const Users = (props: UsersPropsType) => {
                      avatar={el.avatar}
                      followed={el.followed}
                      fullName={el.fullName}
-                     location={el.location}/>
+                     location={el.location}
+                     changeFollowFriend={props.changeFollowFriend}
+        />
     })
 
     return (
