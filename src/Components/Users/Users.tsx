@@ -9,6 +9,7 @@ type UsersPropsType = {
     changeFollowFriend: (id: string, followed: boolean)=>void
 }
 
+
 export const Users = (props: UsersPropsType) => {
 
     const userMapped = props.users.users.map((el, key) => {
