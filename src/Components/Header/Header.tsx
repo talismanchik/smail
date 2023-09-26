@@ -10,4 +10,5 @@ export const Header = () => {
             <p className={style.nameLogo}>SMAIL</p>
         </div>
     </div>
+
 }
