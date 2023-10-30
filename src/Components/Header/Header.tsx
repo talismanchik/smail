@@ -9,7 +9,5 @@ export const Header = () => {
                 alt='photo'/>
             <p className={style.nameLogo}>SMAIL</p>
         </div>
-
-
     </div>
 }
